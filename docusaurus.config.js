@@ -3,21 +3,15 @@ const config = {
   tagline: 'Haladó Python programozás',
   favicon: 'img/favicon.ico',
 
-  url: process.env.NODE_ENV === 'production' 
-    ? 'https://eteszt.github.io'
-    : 'http://localhost',
-  baseUrl: process.env.NODE_ENV === 'production'
-    ? '/docusaurus-python/'
-    : '/',
-    
-  organizationName: 'eteszt', 
+  // GitHub Pages URL beállítások
+  url: 'https://eteszt.github.io',
+  baseUrl: '/docusaurus-python/',
+  organizationName: 'eteszt',
   projectName: 'docusaurus-python',
   trailingSlash: false,
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-
-  themes: ['@docusaurus/theme-live-codeblock'],
 
   i18n: {
     defaultLocale: 'hu',
@@ -41,6 +35,11 @@ const config = {
   ],
 
   themeConfig: {
+    // disable dark mode
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+    },
     navbar: {
       title: 'Python Haladóknak',
       items: [
@@ -53,7 +52,7 @@ const config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()}`,
+      copyright: `Copyright © ${new Date().getFullYear()} - Minden jog fenntartva`,
     },
   },
 };
