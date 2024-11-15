@@ -1,13 +1,13 @@
 {
-  "name": "html-css-tananyag",
+  "name": "docusaurus-python",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
+    "start": "NODE_ENV=development docusaurus start",
+    "build": "NODE_ENV=production docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
+    "deploy": "NODE_ENV=production docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",

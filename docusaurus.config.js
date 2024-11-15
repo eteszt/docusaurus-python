@@ -1,19 +1,22 @@
 const config = {
-  title: 'Oktatási Anyag',
-  tagline: 'Interaktív tananyag',
+  title: 'Python Haladóknak',
+  tagline: 'Haladó Python programozás',
   favicon: 'img/favicon.ico',
 
-  // Itt az URL-t és baseUrl-t kell majd módosítani az új projekteknél
-  url: 'https://eteszt.github.io',
-  baseUrl: '/docusaurus-edu-template/',
+  url: process.env.NODE_ENV === 'production' 
+    ? 'https://eteszt.github.io'
+    : 'http://localhost',
+  baseUrl: process.env.NODE_ENV === 'production'
+    ? '/docusaurus-python/'
+    : '/',
+    
   organizationName: 'eteszt', 
-  projectName: 'docusaurus-edu-template',
+  projectName: 'docusaurus-python',
   trailingSlash: false,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Megtartjuk az interaktív kód blokkokat
   themes: ['@docusaurus/theme-live-codeblock'],
 
   i18n: {
@@ -38,16 +41,11 @@ const config = {
   ],
 
   themeConfig: {
-    // Alapértelmezett navbar beállítások
     navbar: {
-      title: 'Oktatási Anyag',
+      title: 'Python Haladóknak',
       items: [
         {
-          type: 'search',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/eteszt/docusaurus-edu-template',
+          href: 'https://github.com/eteszt/docusaurus-python',
           label: 'GitHub',
           position: 'right',
         },
@@ -55,11 +53,7 @@ const config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} - Minden jog fenntartva`,
-    },
-    // Megtartjuk a kód példák beállításait
-    liveCodeBlock: {
-      playgroundPosition: 'bottom',
+      copyright: `Copyright © ${new Date().getFullYear()}`,
     },
   },
 };
